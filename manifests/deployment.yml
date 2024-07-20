@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: gayatazurecicd 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gayatazurecicd
+  template:
+    metadata:
+      labels:
+        app: gayatazurecicd 
+    spec:
+      containers:
+        - name: gayatazurecicd 
+          image: registryg3.azurecr.io/gayatazurecicd
+          ports:
+          - containerPort: 80
